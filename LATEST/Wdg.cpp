@@ -2,18 +2,18 @@
 
 class_Wdg Wdg;
 
-void class_Wdg::InitFunction(void){
+FUNC(void, WDG_CODE) class_Wdg::InitFunction(void){
 }
 
-void class_Wdg::SetMode(void){
+FUNC(void, WDG_CODE) class_Wdg::SetMode(void){
 }
 
-void class_Wdg::SetTriggerCondition(void){
+FUNC(void, WDG_CODE) class_Wdg::SetTriggerCondition(void){
 }
 
-void class_Wdg::GetVersionInfo(void){
+FUNC(void, WDG_CODE) class_Wdg::GetVersionInfo(void){
 }
 
-void class_Wdg::Cbk_GptNotification(void){
+FUNC(void, WDG_CODE) class_Wdg::Cbk_GptNotification(void){
 }
 

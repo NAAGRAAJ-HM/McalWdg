@@ -4,11 +4,11 @@
 
 class class_Wdg{
    public:
-      void InitFunction        (void);
-      void SetMode             (void);
-      void SetTriggerCondition (void);
-      void GetVersionInfo      (void);
-      void Cbk_GptNotification (void);
+      FUNC(void, WDG_CODE) InitFunction        (void);
+      FUNC(void, WDG_CODE) SetMode             (void);
+      FUNC(void, WDG_CODE) SetTriggerCondition (void);
+      FUNC(void, WDG_CODE) GetVersionInfo      (void);
+      FUNC(void, WDG_CODE) Cbk_GptNotification (void);
 };
 
 extern class_Wdg Wdg;
