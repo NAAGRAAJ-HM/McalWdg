@@ -26,7 +26,6 @@ class class_Wdg{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, WDG_CODE) InitFunction        (void);
       FUNC(void, WDG_CODE) SetMode             (void);
       FUNC(void, WDG_CODE) SetTriggerCondition (void);
       FUNC(void, WDG_CODE) GetVersionInfo      (void);

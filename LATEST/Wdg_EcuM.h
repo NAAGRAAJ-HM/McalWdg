@@ -1,14 +1,15 @@
+#pragma once
 /*****************************************************/
-/* File   : Wdg.cpp                                  */
+/* File   : Wdg_EcuM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Wdg.h"
+#include "Compiler_Cfg_Wdg.h"
 
-#include "Wdg_EcuM.h"
+#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class class_Wdg_EcuM : public class_EcuM_Client{
+   public:
+/*****************************************************/
+/* FUNCTIONS                                         */
+/*****************************************************/
+      FUNC(void, WDG_CODE) InitFunction(void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,27 +41,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Wdg Wdg;
-class_Wdg_EcuM Wdg_EcuM;
-class_Wdg_EcuM *Wdg_EcuM_ptr = &Wdg_EcuM;
-
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
-FUNC(void, WDG_CODE) class_Wdg_EcuM::InitFunction(void){
-}
-
-FUNC(void, WDG_CODE) class_Wdg::SetMode(void){
-}
-
-FUNC(void, WDG_CODE) class_Wdg::SetTriggerCondition(void){
-}
-
-FUNC(void, WDG_CODE) class_Wdg::GetVersionInfo(void){
-}
-
-FUNC(void, WDG_CODE) class_Wdg::Cbk_GptNotification(void){
-}
+extern class_Wdg_EcuM *Wdg_EcuM_ptr;
 
 /*****************************************************/
 /* EOF                                               */
