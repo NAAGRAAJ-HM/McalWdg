@@ -41,7 +41,7 @@ class class_Wdg_EcuM : public class_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Wdg_EcuM *Wdg_EcuM_ptr;
+extern class_EcuM_Client *EcuM_Client_ptr_Wdg;
 
 /*****************************************************/
 /* EOF                                               */

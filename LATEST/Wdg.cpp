@@ -33,9 +33,9 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Wdg Wdg;
 class_Wdg_EcuM Wdg_EcuM;
-class_Wdg_EcuM *Wdg_EcuM_ptr = &Wdg_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_Wdg = &Wdg_EcuM;
+class_Wdg Wdg;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
