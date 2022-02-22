@@ -1,15 +1,14 @@
 #pragma once
 /*****************************************************/
-/* File   : Wdg_EcuM.h                               */
+/* File   : Wdg_Unused.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
+#include "Std_Types.h"
 #include "Compiler_Cfg_Wdg.h"
-
-#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +21,15 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_Wdg_EcuM : public interface_EcuM_Client{
+class class_Wdg_Unused{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, WDG_CODE) InitFunction   (void);
-      FUNC(void, WDG_CODE) DeInitFunction (void);
+      FUNC(void, WDG_CODE) SetMode             (void);
+      FUNC(void, WDG_CODE) SetTriggerCondition (void);
+      FUNC(void, WDG_CODE) GetVersionInfo      (void);
+      FUNC(void, WDG_CODE) Cbk_GptNotification (void);
 };
 
 /*****************************************************/
@@ -42,7 +43,7 @@ class interface_Wdg_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Wdg_EcuM *EcuM_Client_ptr_Wdg;
+//extern class_Wdg Wdg;
 
 /*****************************************************/
 /* EOF                                               */
