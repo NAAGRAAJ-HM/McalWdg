@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Wdg:
       public abstract_module
-   ,  public interface_Wdg_EcuM
-   ,  public interface_Wdg_SchM
 {
    public:
       FUNC(void, WDG_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_Wdg:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Wdg Wdg;
-
-interface_Wdg_EcuM *EcuM_Client_ptr_Wdg = &Wdg;
-interface_Wdg_SchM *SchM_Client_ptr_Wdg = &Wdg;
+module_Wdg     Wdg;
+infEcuMClient* gptrinfEcuMClient_Wdg = &Wdg;
+infSchMClient* gptrinfSchMClient_Wdg = &Wdg;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
