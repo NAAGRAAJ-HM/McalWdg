@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infWdg_Version.h"
+#include "Wdg_Cfg.h"
 #include "infWdg_EcuM.h"
 #include "infWdg_Dcm.h"
 #include "infWdg_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define WDG_AR_RELEASE_MAJOR_VERSION                                           4
+#define WDG_AR_RELEASE_MINOR_VERSION                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(WDG_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible WDG_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(WDG_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible WDG_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, WDG_CODE) module_Wdg::DeInitFunction(void){
 }
 
 FUNC(void, WDG_CODE) module_Wdg::GetVersionInfo(void){
+#if(STD_ON == Wdg_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, WDG_CODE) module_Wdg::MainFunction(void){
