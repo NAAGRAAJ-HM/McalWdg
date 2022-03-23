@@ -40,6 +40,16 @@ class module_Wdg:
       FUNC(void, WDG_CODE) DeInitFunction (void);
       FUNC(void, WDG_CODE) GetVersionInfo (void);
       FUNC(void, WDG_CODE) MainFunction   (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, WDG_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
