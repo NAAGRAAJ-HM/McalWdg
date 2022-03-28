@@ -90,7 +90,12 @@ FUNC(void, WDG_CODE) module_Wdg::GetVersionInfo(void){
 FUNC(void, WDG_CODE) module_Wdg::MainFunction(void){
 }
 
-#include "Wdg_Unused.hpp"
+class class_Wdg_Unused{
+   public:
+      FUNC(void, WDG_CODE) SetMode             (void);
+      FUNC(void, WDG_CODE) SetTriggerCondition (void);
+      FUNC(void, WDG_CODE) Cbk_GptNotification (void);
+};
 
 FUNC(void, WDG_CODE) class_Wdg_Unused::SetMode(void){
 }
