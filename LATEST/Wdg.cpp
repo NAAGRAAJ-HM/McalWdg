@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgWdg.hpp"
 #include "infWdg_EcuM.hpp"
 #include "infWdg_Dcm.hpp"
 #include "infWdg_SchM.hpp"
@@ -36,37 +35,40 @@ class module_Wdg:
       public abstract_module
 {
    public:
+      module_Wdg(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, WDG_CODE) InitFunction   (void);
       FUNC(void, WDG_CODE) DeInitFunction (void);
-      FUNC(void, WDG_CODE) GetVersionInfo (void);
       FUNC(void, WDG_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, WDG_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_Wdg, WDG_VAR) Wdg;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, WDG_VAR, WDG_CONST) gptrinfEcuMClient_Wdg = &Wdg;
+CONSTP2VAR(infDcmClient,  WDG_VAR, WDG_CONST) gptrinfDcmClient_Wdg  = &Wdg;
+CONSTP2VAR(infSchMClient, WDG_VAR, WDG_CONST) gptrinfSchMClient_Wdg = &Wdg;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgWdg.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_Wdg, WDG_VAR) Wdg;
-CONSTP2VAR(infEcuMClient, WDG_VAR, WDG_CONST) gptrinfEcuMClient_Wdg = &Wdg;
-CONSTP2VAR(infDcmClient,  WDG_VAR, WDG_CONST) gptrinfDcmClient_Wdg  = &Wdg;
-CONSTP2VAR(infSchMClient, WDG_VAR, WDG_CONST) gptrinfSchMClient_Wdg = &Wdg;
+VAR(module_Wdg, WDG_VAR) Wdg(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, WDG_CODE) module_Wdg::InitFunction(void){
 
 FUNC(void, WDG_CODE) module_Wdg::DeInitFunction(void){
    Wdg.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, WDG_CODE) module_Wdg::GetVersionInfo(void){
-#if(STD_ON == Wdg_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, WDG_CODE) module_Wdg::MainFunction(void){
