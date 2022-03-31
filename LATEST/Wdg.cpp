@@ -37,10 +37,9 @@ class module_Wdg:
    public:
       module_Wdg(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, WDG_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, WDG_CONFIG_DATA, WDG_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, WDG_CODE) InitFunction   (void);
       FUNC(void, WDG_CODE) DeInitFunction (void);
       FUNC(void, WDG_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_Wdg, WDG_VAR) Wdg(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, WDG_CODE) module_Wdg::InitFunction(
-   CONSTP2CONST(CfgWdg_Type, CFGWDG_CONFIG_DATA, CFGWDG_APPL_CONST) lptrCfgWdg
+   CONSTP2CONST(CfgModule_TypeAbstract, WDG_CONFIG_DATA, WDG_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgWdg){
+   if(E_OK == IsInitDone){
 #if(STD_ON == Wdg_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgWdg for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == Wdg_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_Wdg as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   Wdg.IsInitDone = E_OK;
 }
 
 FUNC(void, WDG_CODE) module_Wdg::DeInitFunction(void){
-   Wdg.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == Wdg_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, WDG_CODE) module_Wdg::MainFunction(void){
