@@ -31,8 +31,16 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_Wdg_Functionality{
+   public:
+      FUNC(void, WDG_CODE) SetMode             (void);
+      FUNC(void, WDG_CODE) SetTriggerCondition (void);
+      FUNC(void, WDG_CODE) Cbk_GptNotification (void);
+};
+
 class module_Wdg:
       public abstract_module
+   ,  public class_Wdg_Functionality
 {
    public:
       module_Wdg(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +92,10 @@ FUNC(void, WDG_CODE) module_Wdg::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == Wdg_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +104,10 @@ FUNC(void, WDG_CODE) module_Wdg::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Wdg_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +132,10 @@ FUNC(void, WDG_CODE) module_Wdg::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Wdg_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +152,10 @@ FUNC(void, WDG_CODE) module_Wdg::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Wdg_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,20 +166,13 @@ FUNC(void, WDG_CODE) module_Wdg::MainFunction(void){
 #endif
 }
 
-class class_Wdg_Unused{
-   public:
-      FUNC(void, WDG_CODE) SetMode             (void);
-      FUNC(void, WDG_CODE) SetTriggerCondition (void);
-      FUNC(void, WDG_CODE) Cbk_GptNotification (void);
-};
-
-FUNC(void, WDG_CODE) class_Wdg_Unused::SetMode(void){
+FUNC(void, WDG_CODE) class_Wdg_Functionality::SetMode(void){
 }
 
-FUNC(void, WDG_CODE) class_Wdg_Unused::SetTriggerCondition(void){
+FUNC(void, WDG_CODE) class_Wdg_Functionality::SetTriggerCondition(void){
 }
 
-FUNC(void, WDG_CODE) class_Wdg_Unused::Cbk_GptNotification(void){
+FUNC(void, WDG_CODE) class_Wdg_Functionality::Cbk_GptNotification(void){
 }
 
 /******************************************************************************/
