@@ -31,13 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_Wdg_Functionality{
-   public:
-      FUNC(void, WDG_CODE) SetMode             (void);
-      FUNC(void, WDG_CODE) SetTriggerCondition (void);
-      FUNC(void, WDG_CODE) Cbk_GptNotification (void);
-};
-
 class module_Wdg:
       public abstract_module
    ,  public class_Wdg_Functionality
