@@ -7,10 +7,20 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "CompilerCfg_Wdg.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define WDG_COREFUNCTIONALITIES                                                \
+              FUNC(void, WDG_CODE) SetMode             (void);                 \
+              FUNC(void, WDG_CODE) SetTriggerCondition (void);                 \
+              FUNC(void, WDG_CODE) Cbk_GptNotification (void);                 \
+
+#define WDG_COREFUNCTIONALITIES_VIRTUAL                                        \
+      virtual FUNC(void, WDG_CODE) SetMode             (void) = 0;             \
+      virtual FUNC(void, WDG_CODE) SetTriggerCondition (void) = 0;             \
+      virtual FUNC(void, WDG_CODE) Cbk_GptNotification (void) = 0;             \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -21,9 +31,7 @@
 /******************************************************************************/
 class class_Wdg_Functionality{
    public:
-      FUNC(void, WDG_CODE) SetMode             (void);
-      FUNC(void, WDG_CODE) SetTriggerCondition (void);
-      FUNC(void, WDG_CODE) Cbk_GptNotification (void);
+      WDG_COREFUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
