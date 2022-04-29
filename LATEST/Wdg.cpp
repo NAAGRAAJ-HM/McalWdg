@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgWdg.hpp"
 #include "Wdg_core.hpp"
-#include "infWdg_EcuM.hpp"
-#include "infWdg_Dcm.hpp"
-#include "infWdg_SchM.hpp"
+#include "infWdg.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_Wdg:
       );
       FUNC(void, WDG_CODE) DeInitFunction (void);
       FUNC(void, WDG_CODE) MainFunction   (void);
+      WDG_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Wdg, WDG_VAR) Wdg;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, WDG_VAR, WDG_CONST) gptrinfSchMClient_Wdg = &Wdg;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgWdg.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
