@@ -159,13 +159,13 @@ FUNC(void, WDG_CODE) module_Wdg::MainFunction(void){
 #endif
 }
 
-FUNC(void, WDG_CODE) class_Wdg_Functionality::SetMode(void){
+FUNC(void, WDG_CODE) module_Wdg::SetMode(void){
 }
 
-FUNC(void, WDG_CODE) class_Wdg_Functionality::SetTriggerCondition(void){
+FUNC(void, WDG_CODE) module_Wdg::SetTriggerCondition(void){
 }
 
-FUNC(void, WDG_CODE) class_Wdg_Functionality::Cbk_GptNotification(void){
+FUNC(void, WDG_CODE) module_Wdg::Cbk_GptNotification(void){
 }
 
 /******************************************************************************/
