@@ -35,6 +35,13 @@ class module_Wdg:
       public abstract_module
    ,  public class_Wdg_Functionality
 {
+   private:
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+            Std_TypeReturn          IsInitDone{E_NOT_OK};
+      const CfgModule_TypeAbstract* lptrCfg{(CfgModule_TypeAbstract*)NULL_PTR};
+
    public:
       module_Wdg(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
