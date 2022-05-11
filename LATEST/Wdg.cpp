@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgWdg.hpp"
 #include "Wdg_core.hpp"
-#include "infWdg.hpp"
+#include "infWdg_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Wdg:
+   INTERFACES_EXPORTED_WDG
       public abstract_module
    ,  public class_Wdg_Functionality
 {
