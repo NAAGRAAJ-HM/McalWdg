@@ -74,7 +74,7 @@ CONSTP2VAR(infSchMClient, WDG_VAR, WDG_CONST) gptrinfSchMClient_Wdg = &Wdg;
 VAR(module_Wdg, WDG_VAR) Wdg(
    {
 #if(STD_ON == _ReSIM)
-// char strModuleName[6];
+   char strModuleName[6] = "WDG";
 #else
 #endif
          WDG_AR_RELEASE_VERSION_MAJOR
