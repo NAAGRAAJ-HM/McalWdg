@@ -130,7 +130,9 @@ FUNC(void, WDG_CODE) module_Wdg::InitFunction(
 #endif
 }
 
-FUNC(void, WDG_CODE) module_Wdg::DeInitFunction(void){
+FUNC(void, WDG_CODE) module_Wdg::DeInitFunction(
+   void
+){
 #if(STD_ON == Wdg_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, WDG_CODE) module_Wdg::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, WDG_CODE) module_Wdg::MainFunction(void){
+FUNC(void, WDG_CODE) module_Wdg::MainFunction(
+   void
+){
 #if(STD_ON == Wdg_InitCheck)
    if(
          E_OK
@@ -175,13 +179,19 @@ FUNC(void, WDG_CODE) module_Wdg::MainFunction(void){
 #endif
 }
 
-FUNC(void, WDG_CODE) module_Wdg::SetMode(void){
+FUNC(void, WDG_CODE) module_Wdg::SetMode(
+   void
+){
 }
 
-FUNC(void, WDG_CODE) module_Wdg::SetTriggerCondition(void){
+FUNC(void, WDG_CODE) module_Wdg::SetTriggerCondition(
+   void
+){
 }
 
-FUNC(void, WDG_CODE) module_Wdg::Cbk_GptNotification(void){
+FUNC(void, WDG_CODE) module_Wdg::Cbk_GptNotification(
+   void
+){
 }
 
 /******************************************************************************/
