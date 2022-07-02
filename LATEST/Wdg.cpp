@@ -82,12 +82,7 @@ FUNC(void, WDG_CODE) module_Wdg::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgWdg;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == Wdg_DevErrorDetect)
