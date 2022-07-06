@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgWdg.hpp"
-#include "Wdg_core.hpp"
-#include "infWdg_Exp.hpp"
+#include "Wdg.hpp"
 #include "infWdg_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_Wdg:
-      INTERFACES_EXPORTED_WDG
-      public abstract_module
-   ,  public class_Wdg_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, WDG_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, WDG_CONFIG_DATA, WDG_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, WDG_CODE) DeInitFunction (void);
-      FUNC(void, WDG_CODE) MainFunction   (void);
-      WDG_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_Wdg, WDG_VAR) Wdg;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
