@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_McalWdg:
-      INTERFACES_EXPORTED_MCALWDG
+      INTERFACES_EXPORTED_WDG
       public abstract_module
    ,  public class_McalWdg_Functionality
 {
@@ -38,13 +38,13 @@ class module_McalWdg:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, MCALWDG_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALWDG_CONST,       MCALWDG_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALWDG_CONFIG_DATA, MCALWDG_APPL_CONST) lptrCfgModule
+      FUNC(void, WDG_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, WDG_CONST,       WDG_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   WDG_CONFIG_DATA, WDG_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, MCALWDG_CODE) DeInitFunction (void);
-      FUNC(void, MCALWDG_CODE) MainFunction   (void);
-      MCALWDG_CORE_FUNCTIONALITIES
+      FUNC(void, WDG_CODE) DeInitFunction (void);
+      FUNC(void, WDG_CODE) MainFunction   (void);
+      WDG_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -58,7 +58,7 @@ class module_McalWdg:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalWdg, MCALWDG_VAR) McalWdg;
+extern VAR(module_McalWdg, WDG_VAR) McalWdg;
 
 /******************************************************************************/
 /* EOF                                                                        */

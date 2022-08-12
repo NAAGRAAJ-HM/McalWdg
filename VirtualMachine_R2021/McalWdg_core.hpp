@@ -12,15 +12,15 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define MCALWDG_CORE_FUNCTIONALITIES                                               \
-              FUNC(void, MCALWDG_CODE) SetMode             (void);                 \
-              FUNC(void, MCALWDG_CODE) SetTriggerCondition (void);                 \
-              FUNC(void, MCALWDG_CODE) Cbk_McalGptNotification (void);                 \
+#define WDG_CORE_FUNCTIONALITIES                                               \
+              FUNC(void, WDG_CODE) SetMode             (void);                 \
+              FUNC(void, WDG_CODE) SetTriggerCondition (void);                 \
+              FUNC(void, WDG_CODE) Cbk_McalGptNotification (void);                 \
 
-#define MCALWDG_CORE_FUNCTIONALITIES_VIRTUAL                                       \
-      virtual FUNC(void, MCALWDG_CODE) SetMode             (void) = 0;             \
-      virtual FUNC(void, MCALWDG_CODE) SetTriggerCondition (void) = 0;             \
-      virtual FUNC(void, MCALWDG_CODE) Cbk_McalGptNotification (void) = 0;             \
+#define WDG_CORE_FUNCTIONALITIES_VIRTUAL                                       \
+      virtual FUNC(void, WDG_CODE) SetMode             (void) = 0;             \
+      virtual FUNC(void, WDG_CODE) SetTriggerCondition (void) = 0;             \
+      virtual FUNC(void, WDG_CODE) Cbk_McalGptNotification (void) = 0;             \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -31,7 +31,7 @@
 /******************************************************************************/
 class class_McalWdg_Functionality{
    public:
-      MCALWDG_CORE_FUNCTIONALITIES_VIRTUAL
+      WDG_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

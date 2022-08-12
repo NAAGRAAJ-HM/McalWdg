@@ -1,20 +1,18 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalWdg.hpp                                                           */
+/* File   : infMcalWdg_Exp.hpp                                                    */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalWdg.hpp"
-#include "CfgMcalWdg.hpp"
-#include "McalWdg_core.hpp"
-#include "infMcalWdg_Exp.hpp"
+#include "infMcalWdg_ServiceDet.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define INTERFACES_EXPORTED_WDG
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -23,29 +21,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_McalWdg:
-      INTERFACES_EXMCALPORTED_MCALWDG
-      public abstract_module
-   ,  public class_McalWdg_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-      const ConstMcalWdg_Type* lptrConst = (ConstMcalWdg_Type*)NULL_PTR;
-
-   public:
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-      FUNC(void, MCALWDG_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALWDG_CONST,       MCALWDG_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALWDG_CONFIG_DATA, MCALWDG_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, MCALWDG_CODE) DeInitFunction (void);
-      FUNC(void, MCALWDG_CODE) MainFunction   (void);
-      MCALWDG_CORE_FUNCTIONALITIES
-};
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -58,7 +33,10 @@ class module_McalWdg:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalWdg, MCALWDG_VAR) McalWdg;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 
 /******************************************************************************/
 /* EOF                                                                        */

@@ -1,18 +1,21 @@
 #pragma once
 /******************************************************************************/
-/* File   : infMcalWdg_Exp.hpp                                                    */
+/* File   : Template.hpp                                                      */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infMcalWdg_ServiceDet.hpp"
+//#include "types.hpp"
+//#include "tle987x.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define INTERFACES_EXMCALPORTED_MCALWDG
+#define One_us                                     ((uint32)SCU_FSYS / 1000000u)
+#define SysTickRL                       ((uint32)SCU_FSYS / (uint32)SysTickFreq)
+#define SysTickFreq                                                        1000u
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -33,10 +36,20 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+extern uint32 WD_Counter;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
+extern void   WDT1_Init               (void);
+extern void   SysTick_Init            (void);
+extern void   WDT1_Stop               (void);
+extern bool   WDT1_Service            (void);
+extern void   WDT1_SOW_Service        (uint32 NoOfSOW);
+extern void   Delay_us                (uint32 delay_time_us);
+extern void   WDT1_Window_Count       (void);
+extern uint32 SysTick_Value_Get       (void);
+extern void   SysTick_ReloadValue_Set (uint32 val);
 
 /******************************************************************************/
 /* EOF                                                                        */
