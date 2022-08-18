@@ -45,21 +45,21 @@ static bool bSOWactive;
 /******************************************************************************/
 /*
 void WDT1_Init(void){
-   SCUPM->WDT1_TRIG.reg = (uint8) SCUPM_WDT1_TRIG;
+   SCUPM.WDT1_TRIG.reg = (uint8) SCUPM_WDT1_TRIG;
    WD_Counter = 0u;
    bSOWactive = false;
 }
 
 void SysTick_Init(void){
-   CPU->SYSTICK_RL.reg = (uint32)SysTickRL;
-   CPU->SYSTICK_CUR.reg = 0u;
-   CPU->SYSTICK_CS.bit.CLKSOURCE = 1u;
-   CPU->SYSTICK_CS.bit.TICKINT = 1u;
-   CPU->SYSTICK_CS.bit.ENABLE = 1u;
+   CPU.SYSTICK_RL.reg = (uint32)SysTickRL;
+   CPU.SYSTICK_CUR.reg = 0u;
+   CPU.SYSTICK_CS.bit.CLKSOURCE = 1u;
+   CPU.SYSTICK_CS.bit.TICKINT = 1u;
+   CPU.SYSTICK_CS.bit.ENABLE = 1u;
 }
 
 void WDT1_Stop(void){
-   CPU->SYSTICK_CS.bit.ENABLE = 0u;
+   CPU.SYSTICK_CS.bit.ENABLE = 0u;
 }
 */
 bool WDT1_Service(void){
@@ -69,7 +69,7 @@ bool WDT1_Service(void){
          (WD_Counter > (uint32)SCUPM_WDT1_TRIGGER)
       || (bSOWactive == true)
    ){
-      SCUPM->WDT1_TRIG.reg = (uint8) SCUPM_WDT1_TRIG;
+      SCUPM.WDT1_TRIG.reg = (uint8) SCUPM_WDT1_TRIG;
       WD_Counter = 0u;
       bSOWactive = false;
       bResult = true;
@@ -78,7 +78,7 @@ bool WDT1_Service(void){
 }
 /*
 void WDT1_SOW_Service(uint32 NoOfSOW){
-   SCUPM->WDT1_TRIG.reg = (NoOfSOW & 3u) << 6u;
+   SCUPM.WDT1_TRIG.reg = (NoOfSOW & 3u) << 6u;
    bSOWactive = true;
 }
 
@@ -119,15 +119,15 @@ void WDT1_Window_Count(void){
 }
 
 uint32 SysTick_Value_Get(void){
-  return CPU->SYSTICK_CUR.reg;
+  return CPU.SYSTICK_CUR.reg;
 }
 
 uint32 SysTick_ReloadValue_Get(void){
-  return(CPU->SYSTICK_RL.reg);
+  return(CPU.SYSTICK_RL.reg);
 }
 
 void SysTick_ReloadValue_Set(uint32 val){
-  CPU->SYSTICK_RL.reg = val;
+  CPU.SYSTICK_RL.reg = val;
 }
 */
 /******************************************************************************/
