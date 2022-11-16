@@ -38,8 +38,8 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-uint32 WD_Counter;
-static bool bSOWactive;
+       uint32 WD_Counter;
+static bool   bSOWactive;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -64,17 +64,24 @@ void WDT1_Stop(void){
 }
 */
 bool WDT1_Service(void){
-   bool bResult;
-   bResult = false;
+   bool bResult = false;
+
    if(
-         (WD_Counter > (uint32)SCUPM_WDT1_TRIGGER)
-      || (bSOWactive == true)
+         (
+               (uint32)SCUPM_WDT1_TRIGGER
+            <  WD_Counter
+         )
+      || (
+               true
+            == bSOWactive
+         )
    ){
       SCUPM.WDT1_TRIG.reg = (uint8) SCUPM_WDT1_TRIG;
-      WD_Counter = 0u;
-      bSOWactive = false;
-      bResult = true;
+      WD_Counter          = 0u;
+      bSOWactive          = false;
+      bResult             = true;
    }
+
    return(bResult);
 }
 /*

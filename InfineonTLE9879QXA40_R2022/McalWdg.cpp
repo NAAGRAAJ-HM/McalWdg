@@ -115,6 +115,7 @@ FUNC(void, MCALWDG_CODE) module_McalWdg::DeInitFunction(
 #endif
 }
 
+#include "wdt1.hpp"
 FUNC(void, MCALWDG_CODE) module_McalWdg::MainFunction(
    void
 ){
@@ -124,6 +125,9 @@ FUNC(void, MCALWDG_CODE) module_McalWdg::MainFunction(
       == IsInitDone
    ){
 #endif
+
+   (void)WDT1_Service();
+
 #if(STD_ON == McalWdg_InitCheck)
    }
    else{
