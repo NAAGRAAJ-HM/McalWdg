@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalWdg.hpp                                                           */
+/* File   : McalWdg.hpp                                                       */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalWdg.hpp"
+#include "infMcalWdg_ServiceNvM_Types.hpp"
 #include "CfgMcalWdg.hpp"
 #include "McalWdg_core.hpp"
 #include "infMcalWdg_Exp.hpp"
