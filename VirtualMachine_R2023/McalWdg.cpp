@@ -9,7 +9,8 @@
 #include "Std_Types.hpp"
 
 #include "McalWdg.hpp"
-#include "infMcalWdg_ServiceSwcEcuM.hpp"
+
+#include "infMcalWdgServiceSwcEcuM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -38,9 +39,9 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, MCALWDG_CODE) McalWdg_InitFunction   (void){}
-FUNC(void, MCALWDG_CODE) McalWdg_DeInitFunction (void){}
-FUNC(void, MCALWDG_CODE) McalWdg_MainFunction   (void){}
+FUNC(void, MCALWDG_CODE) infMcalWdgServiceSwcEcuM_InitFunction   (void){}
+FUNC(void, MCALWDG_CODE) infMcalWdgServiceSwcEcuM_DeInitFunction (void){}
+FUNC(void, MCALWDG_CODE) infMcalWdgServiceSwcSchM_MainFunction   (void){}
 
 /******************************************************************************/
 /* EOF                                                                        */
