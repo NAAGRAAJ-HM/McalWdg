@@ -10,7 +10,7 @@
 
 #include "McalWdg.hpp"
 
-#include "infMcalWdgServiceSwcEcuM.hpp"
+#include "infMcalWdgSwcServiceEcuM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -39,9 +39,9 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, MCALWDG_CODE) infMcalWdgServiceSwcEcuM_InitFunction   (void){}
-FUNC(void, MCALWDG_CODE) infMcalWdgServiceSwcEcuM_DeInitFunction (void){}
-FUNC(void, MCALWDG_CODE) infMcalWdgServiceSwcSchM_MainFunction   (void){}
+FUNC(void, MCALWDG_CODE) infMcalWdgSwcServiceEcuM_InitFunction   (void){}
+FUNC(void, MCALWDG_CODE) infMcalWdgSwcServiceEcuM_DeInitFunction (void){}
+FUNC(void, MCALWDG_CODE) infMcalWdgSwcServiceSchM_MainFunction   (void){}
 
 /******************************************************************************/
 /* EOF                                                                        */

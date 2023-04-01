@@ -1,6 +1,6 @@
 #pragma once
 /******************************************************************************/
-/* File   : infMcalWdgServiceSwcEcuM.hpp                                      */
+/* File   : infMcalWdgSwcServiceEcuM.hpp                                      */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
@@ -24,8 +24,8 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-extern FUNC(void, MCALWDG_CODE) infMcalWdgServiceSwcEcuM_InitFunction   (void);
-extern FUNC(void, MCALWDG_CODE) infMcalWdgServiceSwcEcuM_DeInitFunction (void);
+extern FUNC(void, MCALWDG_CODE) infMcalWdgSwcServiceEcuM_InitFunction   (void);
+extern FUNC(void, MCALWDG_CODE) infMcalWdgSwcServiceEcuM_DeInitFunction (void);
 
 /******************************************************************************/
 /* CONSTS                                                                     */
