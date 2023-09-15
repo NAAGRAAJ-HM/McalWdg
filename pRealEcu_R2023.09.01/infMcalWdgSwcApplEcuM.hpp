@@ -1,5 +1,6 @@
+#pragma once
 /******************************************************************************/
-/* File   : McalWdg.c                                                         */
+/* File   : infMcalWdgSwcApplEcuM.h                                           */
 /*                                                                            */
 /* Author : Raajnaag HULIYAPURADA MATA                                        */
 /*                                                                            */
@@ -23,9 +24,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "Std_Types.h"
-
-#include "infMcalWdgSwcApplEcuM.h"
+#include "CompilerCfg_McalWdg.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -54,13 +53,7 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-extern void Wdt_InitWD0(void);
-extern void Wdt_TriggerWD0(void);
-
-FUNC(void, MCALWDG_CODE) infMcalWdgSwcApplEcuM_InitFunction(void){
-   Wdt_InitWD0();
-   Wdt_TriggerWD0();
-}
+extern FUNC(void, MCALWDG_CODE) infMcalWdgSwcApplEcuM_InitFunction(void);
 
 /******************************************************************************/
 /* EOF                                                                        */
