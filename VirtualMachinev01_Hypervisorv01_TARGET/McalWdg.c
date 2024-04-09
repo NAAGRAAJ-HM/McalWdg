@@ -1,8 +1,7 @@
-#pragma once
 /******************************************************************************/
-/* File   : infMcalWdgSwcApplStartUp.h                                        */
+/* File   : McalWdg.c                                                         */
 /*                                                                            */
-/* Author : Raajnaag HULIYAPURADA MATA                                        */
+/* Author : Nagaraja HULIYAPURADA MATA                                        */
 /*                                                                            */
 /* License / Warranty / Terms and Conditions                                  */
 /*                                                                            */
@@ -14,7 +13,7 @@
 /* certain responsibilities, if you distribute copies of the software, or if  */
 /* you modify it: responsibilities to respect the freedom of others.          */
 /*                                                                            */
-/* All rights reserved. Copyright © 1982 Raajnaag HULIYAPURADA MATA           */
+/* All rights reserved. Copyright © 1982 Nagaraja HULIYAPURADA MATA           */
 /*                                                                            */
 /* Always refer latest software version from:                                 */
 /* https://github.com/RaajnaagHuliyapuradaMata?tab=repositories               */
@@ -24,7 +23,9 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_McalWdg.h"
+#include "Std_Types.hpp"
+
+#include "infMcalWdgSwcApplEcuM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -53,11 +54,14 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-extern FUNC(void,    MCALWDG_CODE) infMcalWdgSwcApplStartUp_vClrFlagInit(void);
-extern FUNC(void,    MCALWDG_CODE) infMcalWdgSwcApplStartUp_vSetFlagInit(void);
-extern FUNC(boolean, MCALWDG_CODE) infMcalWdgSwcApplStartUp_bGetFlagInit(void);
+extern void Wdt_InitWD0(void);
+extern void Wdt_TriggerWD0(void);
+
+FUNC(void, MCALWDG_CODE) infMcalWdgSwcApplEcuM_InitFunction(void){
+   Wdt_InitWD0();
+   Wdt_TriggerWD0();
+}
 
 /******************************************************************************/
 /* EOF                                                                        */
 /******************************************************************************/
-

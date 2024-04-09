@@ -1,9 +1,8 @@
-#ifndef _INFMCALWDGCLIENT_H
-#define _INFMCALWDGCLIENT_H
+#pragma once
 /******************************************************************************/
-/* File   : infMcalWdgClient.h                                                */
+/* File   : infMcalWdgSwcApplEcuM.h                                           */
 /*                                                                            */
-/* Author : Raajnaag HULIYAPURADA MATA                                        */
+/* Author : Nagaraja HULIYAPURADA MATA                                        */
 /*                                                                            */
 /* License / Warranty / Terms and Conditions                                  */
 /*                                                                            */
@@ -15,7 +14,7 @@
 /* certain responsibilities, if you distribute copies of the software, or if  */
 /* you modify it: responsibilities to respect the freedom of others.          */
 /*                                                                            */
-/* All rights reserved. Copyright © 1982 Raajnaag HULIYAPURADA MATA           */
+/* All rights reserved. Copyright © 1982 Nagaraja HULIYAPURADA MATA           */
 /*                                                                            */
 /* Always refer latest software version from:                                 */
 /* https://github.com/RaajnaagHuliyapuradaMata?tab=repositories               */
@@ -25,7 +24,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_McalWdg.h"
+#include "CompilerCfg_McalWdg.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -40,12 +39,6 @@
 /******************************************************************************/
 
 /******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-extern FUNC(void, MCALWDG_CODE) infMcalWdg_vTriggerWdg0(void);
-extern FUNC(void, MCALWDG_CODE) infMcalWdg_vTriggerWdg1(void);
-
-/******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
 
@@ -58,7 +51,10 @@ extern FUNC(void, MCALWDG_CODE) infMcalWdg_vTriggerWdg1(void);
 /******************************************************************************/
 
 /******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+extern FUNC(void, MCALWDG_CODE) infMcalWdgSwcApplEcuM_InitFunction(void);
+
+/******************************************************************************/
 /* EOF                                                                        */
 /******************************************************************************/
-#endif
-
